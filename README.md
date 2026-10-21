@@ -2,7 +2,7 @@
 
 一个使用 **Codex 进行 vibe coding** 的 Windows 桌宠学习项目。使用 Python、Tkinter 和 Pillow，实现动态角色、跟随人物的流式聊天气泡，以及可编辑的性格与模型配置。
 
-[English](README.en.md) · [开发过程说明](AI_DEVELOPMENT.md) · [素材来源与边界](ASSET_PROVENANCE.md) · [发布步骤](docs/PUBLISHING.md) · [首次发布文案](docs/RELEASE-v2.0.4.md) · [依赖说明](THIRD_PARTY_NOTICES.md)
+[English](README.en.md) · [开发过程说明](AI_DEVELOPMENT.md) · [素材来源与边界](ASSET_PROVENANCE.md) · [依赖说明](THIRD_PARTY_NOTICES.md)
 
 ## 为什么做这个项目
 
@@ -28,13 +28,13 @@
 
 以下是测试对话和设置窗口的截图，不包含原角色图片，也不包含真实密钥或私人聊天记录。
 
-![聊天气泡](docs/images/chat-bubble.png)
+![聊天气泡](chat-bubble.png)
 
-![人物下方输入条](docs/images/input-strip.png)
+![人物下方输入条](input-strip.png)
 
 <details><summary>人物设定界面</summary>
 
-![人物设定](docs/images/settings.png)
+![人物设定](settings.png)
 
 </details>
 
@@ -42,7 +42,7 @@
 
 原始角色素材的来源与公开分发授权尚未确认，因此本仓库**不包含角色图片、图标、原始 EXE 或带该素材的打包程序**，也不将这些素材声明为 MIT 授权。
 
-运行 GUI 或构建 EXE 前，请自行准备拥有使用权限的精灵图，放入 `assets/spritesheet.png`。格式见 [assets/README.md](assets/README.md)。仅测试核心对话逻辑不需要角色素材。
+运行 GUI 或构建 EXE 前，请自行准备拥有使用权限的精灵图，放入 `assets/spritesheet.png`。格式见 [PictureREADME.md](PictureREADME.md)。仅测试核心对话逻辑不需要角色素材。
 
 ## 本地运行
 
@@ -73,7 +73,7 @@ py -3.12 -m venv .venv
 
 v2.0.4 在本地 Windows 环境中通过 23 项测试，包括流式回复、上下文、取消、密钥加密、设置保存、右键菜单存活与命令派发。缺少素材的公开源码包运行完整测试时，预期为 17 项通过、6 项 GUI 测试跳过。2.0.3 的打包 EXE 已通过一次真实接口的固定问候测试；2.0.4 未修改传输逻辑，额外通过 HTTPS 上下文初始化检查。这些结果不代表所有服务商、网络和模型均可用。
 
-详细结果见 [验证说明](docs/VALIDATION.md)。
+
 
 GitHub CI 运行核心测试与语法检查。Windows 构建工作流需手动触发，并且只在仓库已经放入授权素材时生成 EXE；当前纯代码版会显示跳过原因。
 
@@ -89,7 +89,7 @@ GitHub CI 运行核心测试与语法检查。Windows 构建工作流需手动�
 
 配置与对话保存在 `data/`。密钥可由当前 Windows 用户加密，人物设定和聊天记录为可读 JSON。换电脑后可能需要重新填写密钥。
 
-不要上传 `data/`、真实密钥、`.env`、聊天记录或错误日志。仓库已经配置相应 `.gitignore`。参考配置 [examples/settings.example.json](examples/settings.example.json) 不包含密钥。
+不要上传 `data/`、真实密钥、`.env`、聊天记录或错误日志。仓库已经配置相应 `.gitignore`。参考配置 [settings.example.json](settings.example.json) 不包含密钥。
 
 代码、测试、构建脚本和项目文档采用 [MIT](LICENSE)。第三方依赖遵循各自许可证；未知授权角色素材不在本项目的授权范围中。详见 [素材说明](ASSET_PROVENANCE.md)。
 
